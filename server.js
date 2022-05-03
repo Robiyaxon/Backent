@@ -1,26 +1,31 @@
 const http = require("http");
 
-var express = require("express");
-var favicon = require("serve-favicon");
-var app = express();
+let requestCount = 1;
+
+const favicon = require("serve-favicon");
+const express = require("express");
+const app = express();
 
 app.use(favicon(__dirname + "/public/images/favicon.ico"));
 
-let requestCount2 = 0;
-const server = http.createServer((request, response) => {
-  requestCount2++;
+const server = http.createServer(function (request, response) {
   switch (request.url) {
-    case "/student":
-      response.write("Student " + requestCount2);
+    case "/students":
+      response.write("Students " + requestCount++);
+      response.end();
       break;
-    case "/maktab":
-      response.write("maktab " + requestCount2);
+    case "/admin":
+      response.write("Tukhtayeva Roziya " + requestCount++);
+      response.end();
       break;
+
     default:
-      response.write("404");
+      response.write(
+        "404 not found. Pages: /students , /admin " + requestCount++
+      );
+      response.end();
+      break;
   }
-  console.log(request.url);
-  response.write("Coder Girl Robiya " + requestCount2);
-  response.end();
 });
+
 server.listen(3003);
