@@ -1,5 +1,5 @@
 {
-  "name": "NodeJsDimich",
+  "name": "dars",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Robiyaxon/Backent#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "serve-favicon": "^2.5.0"
   }
 }

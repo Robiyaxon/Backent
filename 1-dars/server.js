@@ -6,7 +6,7 @@ const favicon = require("serve-favicon");
 const express = require("express");
 const app = express();
 
-app.use(favicon(__dirname + "/public/images/favicon.ico"));
+app.use(favicon(__dirname + "/favicon.ico"));
 
 const server = http.createServer(function (request, response) {
   switch (request.url) {
@@ -15,7 +15,7 @@ const server = http.createServer(function (request, response) {
       response.end();
       break;
     case "/admin":
-      response.write("Tukhtayeva Roziya " + requestCount++);
+      response.write("Tukhtayeva Robiya " + requestCount++);
       response.end();
       break;
 
